@@ -34,7 +34,7 @@ The goal of the project is to practice working with API requests, data filtering
 
 1. Clone the repository:
 ```
-git clone [https://github.com/roody123/nutrition-analysis.git](https://github.com/roody123/it-knowledge-hub.git)
+git clone https://github.com/roody123/it-knowledge-hub.git
 ```
 
 2. Install dependencies:
