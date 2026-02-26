@@ -6,6 +6,6 @@ export const list = [
 
     {
         question: 'What technologies are used?',
-        answer: 'The project is built on React using Axios and React Router.'
+        answer: 'The project is built on React using React Router, Axios and Redux.'
     }
 ]

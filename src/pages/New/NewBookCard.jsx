@@ -16,6 +16,7 @@ export const NewBookCard = ({books}) => {
         <div className="book-card">
             
             <h2>{bookIndex + 1}. {books[bookIndex].title}</h2>
+
             <div className="img-container">
                 <button onClick={previousBook} className="btn-previous">←</button>
                 <a href={books[bookIndex].url} target="_blank">
@@ -25,6 +26,7 @@ export const NewBookCard = ({books}) => {
             </div>
 
             <span>{books[bookIndex].price}</span>
+
         </div>
     )
 }

@@ -24,6 +24,15 @@ nav {
     transition: 0.2s;
 }
 
+#cart-link {
+    color: #007bff;
+    font-weight: bold;
+}
+
+#cart-link:hover {
+    transform: translateY(-2px);
+}
+
 .link:hover {
     color: #007bff;
 }
@@ -111,6 +120,18 @@ h1 {
     width: 100%;
     text-align: center;
     margin-bottom: 50px;
+}
+
+.btn-fav {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-fav:hover {
+    scale: 1.05;
 }
 
 h2 {
@@ -233,7 +254,6 @@ select {
     background: #fff;
 }
 
-
 .search-form {
     display: flex;
     gap: 10px;
@@ -296,6 +316,30 @@ select {
     color: #28a745;
 }
 
+.btn-add {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin: 20px auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    transition: 0.3s ease; 
+}
+
+.btn-add:hover {
+    cursor: pointer;
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.btn-add:active {
+    transform: translateY(-1px);
+}
+
 @media all and (max-width: 500px) {
     .btn-previous, .btn-next {
         font-size: 16px;
@@ -304,4 +348,48 @@ select {
     nav {
         flex-direction: column;
     }
+}
+
+
+/* CART */
+
+.btn-remove {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin: 30px auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    transition: 0.3s ease; 
+}
+
+.btn-remove:hover {
+    cursor: pointer;
+    background: #ff1f1f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 31, 31, 0.4);
+}
+
+.btn-remove:active {
+    transform: translateY(-1px);
+}
+
+.total-price {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.total-price span {
+    font-size: 26px;
+    color: #28a745;
+    letter-spacing: 3px;
+}
+
+/* FAVOURITES */
+
+.wishlist-container .btn-add {
+    margin: 10px auto;
 }

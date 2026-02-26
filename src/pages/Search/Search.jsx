@@ -4,13 +4,17 @@ import { SearchBookCard } from "./SearchBookCard";
 import searchImage from './search.png'
 import { Loader } from '../Loader/Loader.jsx'
 import Swal from 'sweetalert2'
+import { useDispatch, useSelector } from "react-redux";
+import { getPriceFilter, setPriceFilter } from "../../redux/cartSlice.jsx";
 
 function Search() {
     const [inputText, setInputText] = useState('');
     const [searchText, setSearchText] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [books, setBooks] = useState([]);
-    const [price, setPrice] = useState('all');
+
+    const price = useSelector(getPriceFilter);
+    const dispatch = useDispatch();
 
     const getInputText = (e) => {
         setInputText(e.target.value);
@@ -63,7 +67,7 @@ function Search() {
                     <select 
                         id="price-filter"
                         value={price} 
-                        onChange={(e) => setPrice(e.target.value)}>
+                        onChange={(e) => dispatch(setPriceFilter(e.target.value))}>
                         <option value='all'>All</option>
                         <option value="paid">Paid</option>
                         <option value="free">Free</option>
