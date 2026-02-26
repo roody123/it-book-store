@@ -1,40 +1,44 @@
-<h1 align="center">IT Knowledge Hub 📚</h1>
+<h1 align="center">IT Knowledge Hub Pro 📚</h1>
 
 <p align="center">
-  <img width="1919" height="902" alt="Image" src="https://github.com/user-attachments/assets/713d83aa-2939-421f-aa87-ff66cccceea5" />
+  <img width="1919" height="903" alt="Image" src="https://github.com/user-attachments/assets/c50d0e15-0a29-4355-ae45-d601c62214ad" />
 </p>
 
 ## 📌 About the project
-An interactive web application for searching IT literature using a real API (ITBookStore). The project allows users to track new releases, search for books by keywords, and filter them by price (paid/free). 
+An advanced interactive web application for searching and managing IT literature using the ITBookStore API. This version is an evolution of the base project, featuring a robust global state management system and an enhanced user experience.
 
-The goal of the project is to practice working with API requests, data filtering, and creating a responsive interface in React.
+The main goal of this version was to implement a complex architecture using **Redux Toolkit** to handle shopping cart logic, favorites, and persistent filtering.
 
 ## 🛠 Technologies
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Axios](https://img.shields.io/badge/axios-purple?style=for-the-badge&logo=axios&logoColor=white)
+![SweetAlert2](https://img.shields.io/badge/sweetalert2-red?style=for-the-badge&logo=sweetalert2&logoColor=white)
 
-## 📁 Project structure
-* `src/pages/Search` - book search functionality via API requests and filtering logic.
-* `src/pages/New` - page with the latest IT literature releases.
-* `src/pages/About` - information about the project.
-* `src/pages/Accordion` - interactive FAQ component for answering user questions.
-* `src/pages/Loader` - custom loading indicator during requests.
-* `App.jsx` - root component with a configured Router and global structure.
+## 🌟 Key Features (Redux Powered)
 
-## 🌟 Key features
-* **Search:** Integration with the ITBookStore API to get up-to-date book data.
-* **Filtering:** Ability to separate books into paid and free.
-* **Interface:** Adaptive card grid that resizes to fit any screen size.
+* **Global State Management:** Implemented **Redux Toolkit** for seamless data flow across the entire application.
+* **Shopping Cart:** Users can add/remove books. The system automatically calculates the **Total Price** using custom selectors.
+* **Wishlist System:** A dedicated favorites system with persistent "heart" toggles that synchronize across all pages.
+* **Global Filtering:** The price filter (All/Paid/Free) is now stored in the Redux state, maintaining user preferences even when navigating between routes.
+* **Interactive Notifications:** Integrated **SweetAlert2** for elegant user feedback.
 
-## ⚙️ Installation and launch
+## 📁 Project Structure
+* `src/redux` - Core of the application: `store.js` and `cartSlice.js` containing reducers and optimized selectors.
+* `src/pages/Cart` - Shopping cart management.
+* `src/pages/Wishlist` - Personal collection of saved books.
+* `src/pages/Search` - Search engine with price filtering logic.
+* `src/pages/New` - updates on latest releases.
+
+## ⚙️ Installation and Launch
 
 **To launch the project locally:**
 
 1. Clone the repository:
 ```
-git clone https://github.com/roody123/it-knowledge-hub.git
+git clone https://github.com/roody123/it-book-store.git
 ```
 
 2. Install dependencies:
