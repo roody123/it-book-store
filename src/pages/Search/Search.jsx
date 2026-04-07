@@ -77,7 +77,7 @@ function Search() {
             
             <div className="container">
                 {isLoading && <Loader/>}
-                {books.length > 0 && <SearchBookCard books={books} price={price}/>}
+                {books.length > 0 ? <SearchBookCard books={books} price={price}/> : <p>Ошибка! Попробуйте позже.</p>}
             </div>
         </div>
     )

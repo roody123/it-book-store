@@ -14,19 +14,25 @@ export const NewBookCard = ({books}) => {
 
     return (
         <div className="book-card">
-            
-            <h2>{bookIndex + 1}. {books[bookIndex].title}</h2>
+            {books && books.length > 0 ? (
+                <>
+                <h2>{bookIndex + 1}. {books[bookIndex].title}</h2>
 
-            <div className="img-container">
-                <button onClick={previousBook} className="btn-previous">←</button>
-                <a href={books[bookIndex].url} target="_blank">
-                    <img src={books[bookIndex].image} alt="book" width='400px' />
-                </a>
-                <button onClick={nextBook} className="btn-next">→</button>
-            </div>
+                <div className="img-container">
+                    <button onClick={previousBook} className="btn-previous">←</button>
+                    <a href={books[bookIndex].url} target="_blank">
+                        <img src={books[bookIndex].image} alt="book" width='400px' />
+                    </a>
+                    <button onClick={nextBook} className="btn-next">→</button>
+                </div>
 
-            <span>{books[bookIndex].price}</span>
+                <span>{books[bookIndex].price}</span>
+            </>
+            ) : (
+                <p>Книг пока нет, загляните позже!</p>
+            )
 
+            }
         </div>
     )
 }
