@@ -16,6 +16,16 @@ function Search() {
     const price = useSelector(getPriceFilter);
     const dispatch = useDispatch();
 
+    let content;
+
+    if (searchText === '') {
+        content = <p>Введите название книги для поиска...</p>;
+        } else if (books.length > 0) {
+        content = <SearchBookCard books={books} price={price} />;
+        } else {
+        content = <p>Ошибка! Попробуйте позже или уточните запрос.</p>;
+        }
+
     const getInputText = (e) => {
         setInputText(e.target.value);
     }
@@ -41,6 +51,7 @@ function Search() {
                         });
                     }
                 } catch (error) {
+                    content = <p>Ошибка! Попробуйте позже.</p>;
                     console.error("Error while receiving data:", error);
                 } finally {
                     setIsLoading(false);
@@ -76,8 +87,7 @@ function Search() {
             </form>
             
             <div className="container">
-                {isLoading && <Loader/>}
-                {books.length > 0 ? <SearchBookCard books={books} price={price}/> : <p>Ошибка! Попробуйте позже.</p>}
+                {isLoading ? <Loader/> : content}
             </div>
         </div>
     )
